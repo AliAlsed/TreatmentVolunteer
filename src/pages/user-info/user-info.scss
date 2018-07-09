@@ -1,0 +1,28 @@
+page-user-info {
+  /* webkit solution */
+::-webkit-input-placeholder { text-align:right; }
+::-webkit-select-placeholder { text-align:right; }
+
+/* mozilla solution */
+input:-moz-placeholder { text-align:right; }
+select:-moz-placeholder { text-align:right; }
+placeholder{
+  text-align: right
+}
+  .bac{
+background-color: cadetblue;
+@include padding(0, 10px, null, 5px);
+
+// Direction agnostic styles go here
+
+@include ltr() {
+   // Custom ltr styles go here
+   order: 1;
+}
+
+@include rtl() {
+  // Custom rtl styles go here
+  order: -1;
+}
+  }
+}

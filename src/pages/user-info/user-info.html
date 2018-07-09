@@ -1,0 +1,66 @@
+
+
+
+<ion-content class="bac">
+    <div class="head" text-center style="margin-top:44px">
+        <img src="../../assets/imgs//logo.png" alt="chat">
+    </div>
+  <ion-card>
+
+    <ion-card-content style="color:black">
+      <h1 style="text-align: right;padding:5px">ادخل معلوماتك
+        </h1>
+          <ion-item>
+              <ion-input type="text" placeholder="ادخل الاسم" style="color:black"
+               [(ngModel)]="user.name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating style="color:black;text-align: right;font-size: 20px;">
+                  <b>الجنس</b></ion-label>
+                  <ion-select [(ngModel)]="user.gender" style="color:black;text-align: right">
+                      <ion-option value="male">ذكر</ion-option>
+                      <ion-option value="female">انثى</ion-option>
+                  </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-input placeholder=" العمر"type="number" style="color:black;position: rtl"
+                [(ngModel)]="user.age"
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label floating style="color:black;text-align: right;font-size: 20px;">
+                    <b>المحافظه</b></ion-label>
+                    <ion-select [(ngModel)]="user.city" style="color:black;text-align: right">
+                        <ion-option value="Baghdad">بغداد</ion-option>
+                        <ion-option value="Anbar">الأنبار</ion-option>
+                        <ion-option value="Babylon">بابل</ion-option>
+                        <ion-option value="Basra">البصرة</ion-option>
+                        <ion-option value="Halabja">حلبجة</ion-option>
+                        <ion-option value="Erbil">اربيل</ion-option>
+                        <ion-option value="Dohuk">دهوك</ion-option>
+                        <ion-option value="Qadisiyah">القادسية</ion-option>
+                        <ion-option value="Diyala">ديالى</ion-option>
+                        <ion-option value="DhiQar">ذي قار</ion-option>
+                        <ion-option value="Sulaymaniyah">السليمانية</ion-option>
+                        <ion-option value="Salahaddin">صلاح الدين</ion-option>
+                        <ion-option value="Kirkuk">كركوك</ion-option>
+                        <ion-option value="Karbala">كربلاء</ion-option>
+                        <ion-option value="Muthanna">المثنى</ion-option>
+                        <ion-option value="Maysan">ميسان</ion-option>
+                        <ion-option value="Najaf">النجف</ion-option>
+                        <ion-option value="Nineveh">نينوى</ion-option>
+                        <ion-option value="Wasit">واسط</ion-option>
+                    </ion-select>
+              </ion-item>
+              <ion-item>
+                  <ion-input placeholder="مرض مزمن " type="text"
+                  [(ngModel)]="user.disease"
+                  style="color:black;font-size: 20px"></ion-input>
+              </ion-item>
+              <ion-item>
+              <button ion-button large (click)="add()">التالي</button>
+              </ion-item>
+
+            </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 page-home {
-
+    .bg {
+        height: 100%;
+        width: 100%;
+        @include linear-gradient(left,$sea-weed);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+    }
+    .mybtn {
+        position: absolute;
+        display: block;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+    }
+    button {
+        position: absolute;
+        display: block;
+        top: 50%;
+        border: 1px solid #fff;
+        box-shadow: 0px;
+    }
 }

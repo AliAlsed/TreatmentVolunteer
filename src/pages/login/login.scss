@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+page-login {
+::-webkit-input-placeholder { text-align:right; }
+::-webkit-select-placeholder { text-align:right; }
+
+/* mozilla solution */
+input:-moz-placeholder { text-align:right; }
+select:-moz-placeholder { text-align:right; }
+placeholder{
+  text-align: right
+}
+    .invalid {
+        border-bottom: 1px solid #FF6153;
+      }
+      .scroll-content {
+        @include linear-gradient(left,$sea-weed);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+      }
+
+      ion-row {
+        align-items: center;
+        text-align: center;
+      }
+
+      ion-item {
+          border-radius: 30px !important;
+          padding-left: 10px !important;
+          margin-bottom: 80px;
+          background-color: #fff;
+          opacity: 0.7;
+          font-size: 0.9em;
+          font-family: 'Times New Roman', Times, serif;
+          font-style: italic;
+      }
+      ion-input{
+        color: #000;
+      }
+
+      ion-list {
+          margin: 0;
+      }
+
+      .login-logo {
+        flex: 2;
+      }
+
+      .login-form {
+          flex: 1;
+          margin-top: 145px;
+
+      }
+
+      .create-account {
+        color: #fff;
+        text-decoration: underline;
+        background: none;
+      }
+
+      .login-button {
+          width: 100%;
+          border-radius: 30px;
+          font-size: 0.9em;
+          background-color: transparent;
+          border: 1px solid #fff;
+      }
+
+  }
+
+
+
+
