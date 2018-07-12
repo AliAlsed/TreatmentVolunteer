@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { UsersProvider } from '../../providers/users/users';
+import { IonicPage, NavController } from 'ionic-angular';
 import firebase from 'firebase';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { Storage } from '@ionic/storage';
@@ -18,31 +17,35 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'user-info.html',
 })
 export class UserInfoPage {
-  user={
-    key:firebase.auth().currentUser.uid,
-    name:'',
-    gender:'',
-    age:'',
-    city:'',
-    email:firebase.auth().currentUser.email,
-    disease:''
+  user = {
+    key: firebase.auth().currentUser.uid,
+    name: '',
+    gender: '',
+    age: '',
+    city: '',
+    email: firebase.auth().currentUser.email,
+    disease: ''
   }
   constructor(public navCtrl: NavController,
-    public navParams: NavParams ,
-    private fb:FirebaseProvider,
-   private store:Storage) {
+    private fb: FirebaseProvider,
+    private store: Storage) {
   }
 
   ionViewDidLoad() {
     //image
   }
-  add(){
-   console.log(this.user);
-   this.store.set('myPerson',this.user);
+  add(f) {
+    this.user.name = f.value.name;
+    this.user.age = f.value.age;
+    this.user.disease = f.value.disease;
+    this.user.gender = f.value.gender;
+    this.user.city = f.value.city;
+    console.log(this.user);
+    this.store.set('myPerson', this.user);
 
-   this.fb.adduser(this.user).then((userinfo)=>{
-     this.navCtrl.push('TabsPage')
-   })
+    this.fb.adduser(this.user).then((userinfo) => {
+      this.navCtrl.push('TabsPage')
+    })
   }
 
 }

@@ -1,22 +1,29 @@
-import { Component, NgZone, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { Component} from '@angular/core';
+import { IonicPage, LoadingController, App, ModalController } from 'ionic-angular';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { UsersProvider } from '../../providers/users/users';
-import { User } from '../../model/users';
-import { Storage } from '@ionic/storage';
-
+import { HomePage } from '../home/home';
+import { UpdateProfilePage } from '../update-profile/update-profile';
+import {Storage} from '@ionic/storage';
 
 @IonicPage()
 @Component({
   selector: 'page-user-profile',
   templateUrl: 'user-profile.html',
 })
-export class UserProfilePage implements OnInit{
-  Name;
-  age;
-  city
-  disease;
-  constructor(private fr:FirebaseProvider,private para:NavParams,public navCtrl: NavController,private storage:Storage,public UserProvider:UsersProvider,public zone:NgZone,private loadingCtrl:LoadingController) {
+export class UserProfilePage{
+  User={
+    Name:'',
+    age:'',
+    city:'',
+    disease:''
+  }
+  constructor(private fr:FirebaseProvider,
+    public UserProvider:UsersProvider,
+    private loadingCtrl:LoadingController,
+    private app:App,
+     private modal:ModalController,
+     public storage:Storage) {
     this.loader.present();
     }
     loader = this.loadingCtrl.create({
@@ -24,21 +31,38 @@ export class UserProfilePage implements OnInit{
     });
 
   ionViewDidLoad() {
+    this.loader.present();
         this.UserProvider.getUser().then((res:any)=>{
-          this.Name=res.Name;
-          this.age=res.age;
-          this.city=res.city;
-          this.disease=res.disease;
+          this.User.Name=res.name;
+          this.User.age=res.age;
+          this.User.city=res.city;
+          this.User.disease=res.disease;
+        }).then(()=>{
+          this.loader.dismiss();
         })
-    this.loader.dismiss();
   }
-  ngOnInit() {
 
-
+  update(){
+    let mdl=this.modal.create(UpdateProfilePage,{user:this.User});
+    mdl.present();
   }
 
   logout(){
     this.fr.logoutUser();
+    this.app.getRootNav().setRoot(HomePage)
+  }
+  doRefresh(refresher) {
+    this.UserProvider.getUser().then((res:any)=>{
+      console.log(res)
+      this.User.Name=res.name;
+      this.User.age=res.age;
+      this.User.city=res.city;
+      this.User.disease=res.disease;
+    })
+
+    setTimeout(() => {
+      refresher.complete();
+    }, 2000);
   }
 
 }

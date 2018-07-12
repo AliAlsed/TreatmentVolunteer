@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
 page-login {
-::-webkit-input-placeholder { text-align:right; }
-::-webkit-select-placeholder { text-align:right; }
 
-/* mozilla solution */
-input:-moz-placeholder { text-align:right; }
-select:-moz-placeholder { text-align:right; }
-placeholder{
-  text-align: right
-}
-    .invalid {
+
+    ::-webkit-input-placeholder { text-align:right; }
+    ::-webkit-select-placeholder { text-align:right; }
+
+    /* mozilla solution */
+    input:-moz-placeholder { text-align:right; }
+    select:-moz-placeholder { text-align:right; }
+    placeholder{
+      text-align: right
+    }
+      .invalid {
         border-bottom: 1px solid #FF6153;
       }
       .scroll-content {
@@ -28,7 +30,7 @@ placeholder{
       ion-item {
           border-radius: 30px !important;
           padding-left: 10px !important;
-          margin-bottom: 80px;
+          margin-top: 40px;
           background-color: #fff;
           opacity: 0.7;
           font-size: 0.9em;
@@ -44,12 +46,12 @@ placeholder{
       }
 
       .login-logo {
-        flex: 2;
+        flex: 0;
       }
 
       .login-form {
           flex: 1;
-          margin-top: 145px;
+          margin-top: 45px;
 
       }
 
@@ -60,12 +62,16 @@ placeholder{
       }
 
       .login-button {
-          width: 100%;
-          border-radius: 30px;
+          width: 90%;
+          border-radius: 30px !important;
+          margin-left: 10px !important;
+          padding: 5px;
           font-size: 0.9em;
           background-color: transparent;
           border: 1px solid #fff;
       }
+
+
 
   }
 

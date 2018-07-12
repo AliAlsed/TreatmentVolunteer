@@ -1,11 +1,15 @@
 <ion-content text-center class="bg">
   <div class="head" text-center style="margin-top:120px">
-        <img src="assets/imgs//logo.png" alt="chat">
+    <img src="assets/imgs/logo.png" alt="chat">
   </div>
   <div class="mybtn">
-  <button ion-button color="primary"block (click)="signup()">انشاء حساب
+    <button ion-button color="facebook" round full (click)="signup()">
+      <ion-icon name='arrow-back'></ion-icon> &nbsp; انشاء حساب
     </button>
-  <button ion-button color="primary" block (click)="login()" >   التسجيل
-  </button>
+    <button ion-button color="facebook" round full (click)="login()">
+      التسجيل &nbsp;
+      <ion-icon name='arrow-forward'></ion-icon>
+
+    </button>
   </div>
 </ion-content>

@@ -2,7 +2,6 @@ import { credientials } from './../../model/credeintials';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import firebase from 'firebase';
-import { User } from '../../model/users';
 /*
   Generated class for the FirebaseProvider provider.
 
@@ -52,5 +51,10 @@ export class FirebaseProvider {
      return firebase.auth().signInWithEmailAndPassword(user.email,user.password).then((res)=>{
        console.log(res)
      })
+  }
+  resetPassword(email:string):Promise<void>{
+    return firebase.auth().sendPasswordResetEmail(email).then((res)=>{
+      console.log(res);
+    });
   }
 }

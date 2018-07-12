@@ -12,11 +12,15 @@ import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { fireconfig } from './firebase.config';
 import { UsersProvider } from '../providers/users/users';
 import { IonicStorageModule } from '@ionic/storage';
-import { Geolocation } from '@ionic-native/geolocation';
 import { AddDiseaseProvider } from '../providers/add-disease/add-disease';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { TreatmentInfoPage } from '../pages/treatment-info/treatment-info';
 import { TreatmentDetailPage } from '../pages/treatment-detail/treatment-detail';
+import { AlldiseaseDetailPage } from '../pages/alldisease-detail/alldisease-detail';
+import { LoginPage } from '../pages/login/login';
+import { FormsModule } from '@angular/forms';
+import { ResetPasswordPage } from '../pages/reset-password/reset-password';
+import { UpdateProfilePage } from '../pages/update-profile/update-profile';
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import { TreatmentDetailPage } from '../pages/treatment-detail/treatment-detail'
     MyApp,
     HomePage,
     TreatmentInfoPage,
-    TreatmentDetailPage
+    TreatmentDetailPage,
+    AlldiseaseDetailPage,
+    LoginPage,
+    ResetPasswordPage,
+    UpdateProfilePage
   ],
   imports: [
     BrowserModule,
@@ -32,6 +40,7 @@ import { TreatmentDetailPage } from '../pages/treatment-detail/treatment-detail'
     AngularFireModule.initializeApp(fireconfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    FormsModule,
     IonicStorageModule.forRoot()
 
   ],
@@ -39,8 +48,13 @@ import { TreatmentDetailPage } from '../pages/treatment-detail/treatment-detail'
   entryComponents: [
     MyApp,
     HomePage,
+    LoginPage,
     TreatmentInfoPage,
-    TreatmentDetailPage
+    UpdateProfilePage,
+    TreatmentDetailPage,
+    AlldiseaseDetailPage,
+    ResetPasswordPage,
+    UpdateProfilePage
   ],
   providers: [
     StatusBar,
@@ -51,7 +65,6 @@ import { TreatmentDetailPage } from '../pages/treatment-detail/treatment-detail'
     UsersProvider,
     Camera,
     Storage,
-    Geolocation,
     AddDiseaseProvider,
 
   ]

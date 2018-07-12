@@ -1,6 +1,6 @@
 import { credientials } from './../../model/credeintials';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 
 /**
@@ -16,12 +16,12 @@ import { FirebaseProvider } from '../../providers/firebase/firebase';
   templateUrl: 'register.html',
 })
 export class RegisterPage {
-  credeintials ={} as credientials;
-  constructor(private _FirebaseProvider:FirebaseProvider,
-    public navCtrl: NavController, public navParams: NavParams) {
+  credeintials = {} as credientials;
+  constructor(private _FirebaseProvider: FirebaseProvider,
+    public navCtrl: NavController) {
   }
-  register(){
-    this._FirebaseProvider.createuser(this.credeintials).then(()=>{
+  register() {
+    this._FirebaseProvider.createuser(this.credeintials).then(() => {
       this.navCtrl.push('UserInfoPage');
     });
 

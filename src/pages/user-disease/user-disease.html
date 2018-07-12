@@ -9,13 +9,15 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-card *ngFor="let item of diseaseList" class="card">
-    <img src={{item.image}} style="height: 200px;"class="img" />
+    <img src={{item.image}} style="height: 200px;" class="img" />
     <ion-card-content>
       <ion-row>
         <ion-col>
-          <button ion-button icon-start clear small style="font-size:14px"
-          (click)="remove(item.id)">
+          <button ion-button icon-start clear small (click)="remove(item.id,item.city)">
             <ion-icon name="trash"></ion-icon>
             <div>تم ايصال العلاج حذف</div>
           </button>
@@ -24,9 +26,8 @@
 
         </ion-col>
         <ion-col center text-center>
-          <button ion-button icon-end clear small style="font-size:14px"
-          (click)="detail(item)">
-              <div>التفاصيل</div>
+          <button ion-button icon-end clear small (click)="detail(item)">
+            <div>التفاصيل</div>
             <ion-icon name="bookmark"></ion-icon>
           </button>
         </ion-col>

@@ -7,12 +7,27 @@
 <ion-header>
 
   <ion-navbar color="nav">
-    <ion-title style="text-align:right"> جميع الادويه </ion-title>
+    <ion-title style="text-align:right"> {{city}} جميع الادويه الخاصه ب </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let disease of alldisease">
+    <img src="{{disease.photo}}" style="height: 200px; width:100%" class="img" />
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <button ion-button item-end clear small style="font-size:14px" (click)="detail(disease)">
+            <div>التفاصيل</div> &nbsp;
+            <ion-icon name="bookmark"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

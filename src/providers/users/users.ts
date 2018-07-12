@@ -41,9 +41,9 @@ addUser(user: User) {
     })
     return promise;
 }
-updateUser(user: User) {
-  const personRef = firebase.database().ref(`/users/`).child(firebase.auth().currentUser.uid);
-  personRef.update({user})}
+updateUser(user):Promise<void> {
+  return firebase.database().ref(`/users/`).child(firebase.auth().currentUser.uid).update(user);
+}
 removeUser(user: User) {
   const personRef = firebase.database().ref(`/users/`).child(firebase.auth().currentUser.uid);
   personRef.remove()

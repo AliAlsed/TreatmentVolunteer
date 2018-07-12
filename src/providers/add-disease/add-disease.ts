@@ -1,7 +1,5 @@
-import {  disease } from './../../model/disease';
-import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Injectable } from '@angular/core';
-import { Platform , LoadingController} from 'ionic-angular';
+import { Platform} from 'ionic-angular';
 import firebase from 'firebase';
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -22,8 +20,8 @@ export class AddDiseaseProvider {
   }
   addDisease(disease){
     var promise = new Promise((resolve) => {
-      this.firestore.child(this.afireauth.auth.currentUser.uid).push(disease).then(() => {
-        this.fireall.child(disease.city).push(disease)
+      this.firestore.child(this.afireauth.auth.currentUser.uid).push(disease).then((res) => {
+        this.fireall.child(disease.city).child(res.key).set(disease);
         }).then(()=>{
           resolve({ success: true });
         })
@@ -33,14 +31,30 @@ return promise;
   getDisease():firebase.database.Reference{
     return this.firestore.child(this.afireauth.auth.currentUser.uid)
   }
-  deleteDisease(id):Promise<any>{
-    return this.firestore.child(`${this.afireauth.auth.currentUser.uid}/${id}`).remove()
+  deleteDisease(id,city):Promise<any>{
+    console.log(id,city);
+    return this.firestore.child(`${this.afireauth.auth.currentUser.uid}/${id}`).remove().then(()=>{
+      this.fireall.child(`${city}/${id}`).remove();
+      console.log(city);
+    })
   }
   getAllDisease(city):firebase.database.Reference{
-    return this.fireall.child(city);
+      return this.fireall.child(city)
   }
 
+/*
+ var promise = new Promise((resolve, reject) => {
+    this.firedata.child(firebase.auth().currentUser.uid).once('value', (snapshot) => {
+      resolve(snapshot.val());
+    }).catch((err) => {
+      reject(err);
+      })
+    })
+    return promise;
 
+
+
+*/
 
   }
 

@@ -1,29 +1,32 @@
-
 <ion-header>
 
   <ion-navbar color="nav">
     <ion-title style="text-align:right">الملف الشخصي</ion-title>
     <ion-buttons start left>
-      <button ion-button icon-only  (click)="logout()">
+      <button ion-button icon-only (click)="logout()">
         <ion-icon name="log-out"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="update()">
+        <ion-icon name="build"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content>
-    <ion-item-group>
-      <ion-item-divider></ion-item-divider>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <img src="assets/imgs/code.png" />
+  <ion-item-group>
+    <ion-item-divider></ion-item-divider>
     <ion-item style="color:black;text-align: right">
-      الاسم : {{"   "+Name}}
+      الاسم : {{" "+User.Name}}
     </ion-item>
     <ion-item style="color:black;text-align: right">
-        العمر : {{"   "+age}}
+      العمر : {{" "+User.age}}
     </ion-item>
     <ion-item style="color:black;text-align: right">
-        المرض المزمن : {{"   "+disease}}
+      المرض المزمن : {{" "+User.disease}}
     </ion-item>
   </ion-item-group>
 

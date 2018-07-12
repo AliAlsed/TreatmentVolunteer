@@ -1,0 +1,92 @@
+page-update-profile {
+  ::-webkit-input-placeholder { text-align:right; }
+  ::-webkit-select-placeholder { text-align:right; }
+
+  /* mozilla solution */
+  input:-moz-placeholder { text-align:right; }
+  select:-moz-placeholder { text-align:right; }
+  placeholder{
+    text-align: right
+  }
+    .invalid {
+      border-bottom: 1px solid #FF6153;
+    }
+    .scroll-content {
+      @include linear-gradient(left,$sea-weed);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+    }
+
+    ion-row {
+      align-items: center;
+      text-align: center;
+    }
+
+    ion-item {
+        border-radius: 30px !important;
+        padding-left: 10px !important;
+        margin-top: 40px;
+        background-color: #fff;
+        opacity: 0.7;
+        font-size: 0.9em;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        text-align: right;
+    }
+    ion-option{
+      text-align: right;
+    }
+
+    ion-input{
+      color: #000;
+    }
+
+    ion-list {
+        margin: 0;
+    }
+
+    .login-logo {
+      flex: 0;
+    }
+
+    .login-form {
+        flex: 1;
+        margin-top: 45px;
+
+    }
+    ion-select{
+      width:100%;
+      max-width: 100% !important;
+      padding-left:5px;
+    }
+    ion-option{
+      width:100%;
+      max-width: 100% !important;
+      padding-left:5px;
+
+    }
+
+    .alert-md [aria-checked=true] .alert-radio-label {
+      color: #7c4dff;
+      text-align: right;
+  }
+ ion-alert{
+   left:0px;
+   text-align:right;
+ }
+ div.alert-head{
+   color: #7c4dff;
+ }
+
+
+    .login-button {
+        width: 90%;
+        border-radius: 30px !important;
+        margin-left: 10px !important;
+        padding: 5px;
+        font-size: 0.9em;
+        background-color: transparent;
+        border: 1px solid #fff;
+    }
+}

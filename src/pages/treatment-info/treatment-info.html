@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color="nav" >
+  <ion-navbar color="nav">
     <ion-title style="text-align:right">اضافه دواء</ion-title>
   </ion-navbar>
 
@@ -15,49 +15,31 @@
 
 <ion-content padding>
 
-      <div  *ngIf="imgSource" style="text-align:center">
-        <img class="img" src={{imgSource}}>
-      </div>
-    <form #f="ngForm">
+  <div *ngIf="imgSource" style="text-align:center">
+    <img class="img" src={{imgSource}}>
+  </div>
+  <form #f="ngForm">
     <ion-item>
-        <ion-input type="text"
-        placeholder="ادخل اسم الدواء"
-        style="color:black"
-        name="treatment"
-        required
-        ngModel></ion-input>
+      <ion-input type="text" placeholder="ادخل اسم الدواء" style="color:black" name="treatment" required ngModel></ion-input>
     </ion-item>
     <ion-item>
-        <ion-input type="text"
-         placeholder="ادخل اسم الدوله المنتجه"
-         style="color:black"
-         name="country"
-         ngModel></ion-input>
+      <ion-input type="text" placeholder="ادخل اسم الدوله المنتجه" style="color:black" name="country" ngModel></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text"
-       placeholder="الكميه المطلوبه"
-       style="color:black"
-       name="quantity"
-       ngModel></ion-input>
-  </ion-item>
+      <ion-input type="text" placeholder="الكميه المطلوبه" style="color:black" name="quantity" ngModel></ion-input>
+    </ion-item>
     <ion-item>
-        <ion-input type="text"
-         placeholder="   ادخل رقم الهاتف الخاص بك"
-         style="color:black"
-         name="phone"
-         ngModel
-         required
-         ></ion-input>
+      <ion-input type="text" placeholder="   ادخل رقم الهاتف الخاص بك" style="color:black" name="phone" ngModel required></ion-input>
     </ion-item>
 
-      <br><br>
-      <button ion-button block (click)="chooseimage()" icon-start color="nav">
-          ارفع صوره الدواء
+    <br>
+    <br>
+    <button ion-button block (click)="chooseimage()" icon-start color="nav">
+      ارفع صوره الدواء
       <ion-icon name="camera"></ion-icon>
 
-      </button>
+    </button>
 
-      <button ion-button block [disabled]="f.invalid" (click)="add(f)" color="nav"> اضف</button>
-    </form>
+    <button ion-button block [disabled]="f.invalid" (click)="add(f)" color="nav"> اضف</button>
+  </form>
 </ion-content>
