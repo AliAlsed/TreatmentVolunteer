@@ -12,12 +12,14 @@ placeholder{
   .invalid {
     border-bottom: 1px solid #FF6153;
   }
-  .scroll-content {
-    @include linear-gradient(left,$sea-weed);
+  .bg {
+    height: 100%;
+    width: 100%;
+    background: url('assets/imgs/bg.png');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
-  }
+}
 
   ion-row {
     align-items: center;
@@ -33,6 +35,7 @@ placeholder{
       font-size: 0.9em;
       font-family: 'Times New Roman', Times, serif;
       font-style: italic;
+      border: solid black 1px;
   }
   ion-input{
     color: #000;

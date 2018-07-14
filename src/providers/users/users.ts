@@ -14,7 +14,7 @@ export class UsersProvider {
 userId:any
 userRef:any;
 firedata = firebase.database().ref('/users');
-
+fireimage = firebase.database().ref('/usersimage')
   constructor(private db: AngularFireDatabase,private afAuth:AngularFireAuth) {
     this.afAuth.authState.subscribe( user => {
       if (user) { this.userId = user.uid }
@@ -35,6 +35,24 @@ addUser(user: User) {
   var promise = new Promise((resolve, reject) => {
     this.firedata.child(firebase.auth().currentUser.uid).set({
       user
+    }).catch((err) => {
+      reject(err);
+      })
+    })
+    return promise;
+}
+addUserImage(image){
+  var promise = new Promise((resolve, reject) => {
+    this.fireimage.child(firebase.auth().currentUser.uid).set({'image':image}).catch((err) => {
+    reject(err);
+    })
+  })
+  return promise;
+}
+getUserImage(){
+  var promise = new Promise((resolve, reject) => {
+    this.fireimage.child(firebase.auth().currentUser.uid).once('value', (snapshot) => {
+      resolve(snapshot.val());
     }).catch((err) => {
       reject(err);
       })

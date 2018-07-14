@@ -1,6 +1,6 @@
 import { credientials } from './../../model/credeintials';
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, AlertController } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 
 /**
@@ -18,12 +18,20 @@ import { FirebaseProvider } from '../../providers/firebase/firebase';
 export class RegisterPage {
   credeintials = {} as credientials;
   constructor(private _FirebaseProvider: FirebaseProvider,
-    public navCtrl: NavController) {
-  }
+    public navCtrl: NavController,
+    public alertCtrl:AlertController) { }
+
   register() {
     this._FirebaseProvider.createuser(this.credeintials).then(() => {
       this.navCtrl.push('UserInfoPage');
-    });
+    },(err)=>{
+        let alert = this.alertCtrl.create({
+        title: 'login',
+        subTitle: `${err}`,
+        buttons: ['Dismiss']
+      });
+      alert.present();
+    })
 
   }
 

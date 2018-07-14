@@ -11,12 +11,14 @@ page-update-profile {
     .invalid {
       border-bottom: 1px solid #FF6153;
     }
-    .scroll-content {
-      @include linear-gradient(left,$sea-weed);
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      background-size: cover;
-    }
+      .bg {
+    height: 100%;
+    width: 100%;
+    background: url('assets/imgs/bg.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
 
     ion-row {
       align-items: center;

@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 page-home {
+  $img:"assets/imgs/bg.png";
     .bg {
         height: 100%;
         width: 100%;
-        @include linear-gradient(left,$sea-weed);
+        background: url('assets/imgs/bg.png');
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;

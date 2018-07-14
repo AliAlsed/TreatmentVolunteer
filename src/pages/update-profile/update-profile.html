@@ -13,10 +13,7 @@
 </ion-header>
 
 
-<ion-content padding>
-  <div class="login-logo" text-center style="margin-top:10px">
-    <img src="assets/imgs/logo.png" alt="chat">
-  </div>
+<ion-content style="background-image: url('assets/imgs/bg.png')" text-center class="bg">
   <form #f="ngForm">
     <ion-row class="login-form">
       <ion-col>
@@ -59,7 +56,7 @@
           </ion-item>
 
         </ion-list>
-        <button ion-button [disabled]="f.invalid" type="submit" block (click)="update(f)" class="login-button" style="margin-top: 5px;">
+        <button ion-button [disabled]="f.invalid" color="light"type="submit" block (click)="update(f)" class="login-button" style="margin-top: 5px;">
           <b>تحديث البروفايل</b>
         </button>
 

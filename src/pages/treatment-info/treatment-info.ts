@@ -91,6 +91,9 @@ export class TreatmentInfoPage {
   getMyUrl() {
     firebase.storage().ref().child(`/images/${this.uuid}`).getDownloadURL().then((url) => {
       this.imgSource = url;
+      if(url != null && url != undefined){
+        this.firedata.set(this.imgSource);
+      }
       let alert = this.alertCtrl.create({
         title: 'imgSource',
         subTitle: 'تم رفع الصوره',
@@ -112,6 +115,9 @@ export class TreatmentInfoPage {
 
 
   }
+  pop(){
+    this.viewCtrl.dismiss();
+  }
 
   add(f) {
 
@@ -119,10 +125,9 @@ export class TreatmentInfoPage {
     this.disease.phone = f.value.phone;
     this.disease.treatment = f.value.treatment;
     this.disease.quantity = f.value.quantity;
+    if(this.imgSource != null && this.imgSource != undefined){
     this.disease.photo = this.imgSource;
-
     console.log(this.disease);
-
     this._AddDiseaseProvider.addDisease(this.disease).then((res) => {
       this.viewCtrl.dismiss();
     }, (error) => {
@@ -133,7 +138,15 @@ export class TreatmentInfoPage {
       });
       alert.present();
     });
-
   }
-
+else{
+  let alert = this.alertCtrl.create({
+    title: 'error',
+    subTitle: ' يجب رفع الصوره قبل خزن البيانات',
+    buttons: ['Dismiss']
+  });
+  alert.present();
 }
+  }
+}
+

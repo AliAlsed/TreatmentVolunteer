@@ -1,18 +1,10 @@
-<ion-header>
 
-  <ion-navbar color="nav">
-    <ion-title style="text-align:right">تسجيل دخول</ion-title>
-  </ion-navbar>
+<ion-content style="background-image: url('assets/imgs/bg.png')" text-center class="bg">
 
-</ion-header>
-<ion-content padding>
-  <div class="login-logo" text-center style="margin-top:10px">
-    <img src="assets/imgs/logo.png" alt="chat">
-  </div>
   <ion-row class="login-form">
     <ion-col>
       <ion-list inset>
-        <ion-item style="margin-top: 15px;">
+        <ion-item style="margin-top: 285px;">
           <ion-label>
             <ion-icon name="mail"></ion-icon>
           </ion-label>
@@ -25,11 +17,15 @@
           <ion-input type="password" placeholder="ادخل الرقم السري" [(ngModel)]="credeintials.password"></ion-input>
         </ion-item>
       </ion-list>
-      <button ion-button block (click)="onSignin()" class="login-button">تسجيل</button>
+      <button ion-button block (click)="onSignin()" color="light"class="login-button">تسجيل</button>
       <br>
       <br>
       <button (click)="reset()" class="create-account" style="margin-top: 5px;">
         <b>اعاده تهيئه الباسورد </b>
+      </button>
+      او
+      <button (click)="signup()" class="create-account" style="margin-top: 5px;">
+        <b>انشاء حساب جديد </b>
       </button>
 
     </ion-col>
