@@ -1,10 +1,10 @@
 
-<ion-content style="background-image: url('assets/imgs/bg.png')" text-center class="bg">
-
+<ion-content text-center class="bg">
+  <img src="../../assets/imgs/Treatment-icon.png" style="margin-top: 90px">
   <ion-row class="login-form">
     <ion-col>
       <ion-list inset>
-        <ion-item style="margin-top: 285px;">
+        <ion-item style="margin-top: 75px;">
           <ion-label>
             <ion-icon name="mail"></ion-icon>
           </ion-label>
@@ -17,7 +17,9 @@
           <ion-input type="password" placeholder="ادخل الرقم السري" [(ngModel)]="credeintials.password"></ion-input>
         </ion-item>
       </ion-list>
-      <button ion-button block (click)="onSignin()" color="light"class="login-button">تسجيل</button>
+      <button ion-button block  (click)="onSignin()" class="login-button" color="btn">
+        تسجيل
+      </button>
       <br>
       <br>
       <button (click)="reset()" class="create-account" style="margin-top: 5px;">

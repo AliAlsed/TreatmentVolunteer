@@ -9,7 +9,9 @@ page-login {
     -moz-background-size: cover;
     background-size: cover;
 }
-
+.scroll-content {
+  background-color: #22ABB6;
+}
     ::-webkit-input-placeholder { text-align:right; }
     ::-webkit-select-placeholder { text-align:right; }
 
@@ -63,13 +65,11 @@ page-login {
       }
 
       .login-button {
-          width: 90%;
-          border-radius: 30px !important;
-          margin-left: 10px !important;
-          padding: 10px;
-          font-size: 1.2em;
-          background-color: transparent;
-          border: 1px solid #fff;
+        width: 90%;
+        border-radius: 30px !important;
+        margin-left: 20px !important;
+        padding: 20px;
+        font-size: 1.0em;
       }
 
 

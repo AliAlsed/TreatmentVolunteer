@@ -1,17 +1,4 @@
 page-register {
-
-::-webkit-input-placeholder { text-align:right; }
-::-webkit-select-placeholder { text-align:right; }
-
-/* mozilla solution */
-input:-moz-placeholder { text-align:right; }
-select:-moz-placeholder { text-align:right; }
-placeholder{
-  text-align: right
-}
-  .invalid {
-    border-bottom: 1px solid #FF6153;
-  }
   .bg {
     height: 100%;
     width: 100%;
@@ -20,54 +7,66 @@ placeholder{
     -moz-background-size: cover;
     background-size: cover;
 }
+.scroll-content {
+  background-color: #22ABB6;
+}
+    ::-webkit-input-placeholder { text-align:right; }
+    ::-webkit-select-placeholder { text-align:right; }
 
-  ion-row {
-    align-items: center;
-    text-align: center;
-  }
+    /* mozilla solution */
+    input:-moz-placeholder { text-align:right; }
+    select:-moz-placeholder { text-align:right; }
+    placeholder{
+      text-align: right
+    }
+      .invalid {
+        border-bottom: 1px solid #FF6153;
+      }
 
-  ion-item {
-      border-radius: 30px !important;
-      padding-left: 10px !important;
-      margin-bottom: 80px;
-      background-color: #fff;
-      opacity: 0.7;
-      font-size: 0.9em;
-      font-family: 'Times New Roman', Times, serif;
-      font-style: italic;
-      border: solid black 1px;
-  }
-  ion-input{
-    color: #000;
-  }
+      ion-row {
+        align-items: center;
+        text-align: center;
+      }
 
-  ion-list {
-      margin: 0;
-  }
+      ion-item {
+          border-radius: 30px !important;
+          padding-left: 10px !important;
+          margin-top: 40px;
+          background-color: #fff;
+          opacity: 0.7;
+          font-size: 0.9em;
+          font-family: 'Times New Roman', Times, serif;
+          font-style: italic;
+      }
+      ion-input{
+        color: #000;
+      }
 
-  .login-logo {
-    flex: 2;
-  }
+      ion-list {
+          margin: 0;
+      }
 
-  .login-form {
-      flex: 1;
-      margin-top: 45px;
+      .login-logo {
+        flex: 0;
+      }
 
-  }
+      .login-form {
+          flex: 1;
+          margin-top: 45px;
 
-  .create-account {
-    color: #fff;
-    text-decoration: underline;
-    background: none;
-  }
+      }
 
-  .login-button {
-      width: 90%;
-      border-radius: 30px !important;
-      margin-left: 20px !important;
-      padding: 20px;
-      font-size: 0.9em;
-      background-color: transparent;
-      border: 1px solid #fff;
-  }
+      .create-account {
+        color: #fff;
+        text-decoration: underline;
+        background: none;
+      }
+
+      .login-button {
+        width: 90%;
+        border-radius: 30px !important;
+        margin-left: 20px !important;
+        padding: 20px;
+        font-size: 1.0em;
+      }
 }

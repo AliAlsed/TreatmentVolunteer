@@ -1,8 +1,5 @@
 <ion-content class="bac">
-  <div class="head" text-center style="margin-top:44px">
-    <img src="assets/imgs/logo.png" alt="chat">
-  </div>
-  <ion-card>
+  <ion-card style="margin-top: 185px;">
 
     <ion-card-content style="color:black">
       <h1 style="text-align: right;padding:5px">ادخل معلوماتك
@@ -13,10 +10,7 @@
           </ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating style="color:black;text-align: right;font-size: 20px;">
-            <b>الجنس</b>
-          </ion-label>
-          <ion-select ngModel name="gender" style="color:black;text-align: right">
+          <ion-select placeholder=" الجنس" ngModel name="gender" style="color:black;text-align: right">
             <ion-option value="male">ذكر</ion-option>
             <ion-option value="female">انثى</ion-option>
           </ion-select>
@@ -26,11 +20,8 @@
           </ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating style="color:black;text-align: right;font-size: 20px;">
-            <b>المحافظه</b>
-          </ion-label>
-          <ion-select name="city" ngModel style="color:black;text-align: right" required>
-            <ion-option value="Baghdad">بغداد</ion-option>
+            <ion-select name="city" placeholder=" محافضتك" ngModel style="color:black;
+            text-align: right" required>            <ion-option value="Baghdad">بغداد</ion-option>
             <ion-option value="Anbar">الأنبار</ion-option>
             <ion-option value="Babylon">بابل</ion-option>
             <ion-option value="Basra">البصرة</ion-option>

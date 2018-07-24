@@ -14,7 +14,7 @@ page-update-profile {
       .bg {
     height: 100%;
     width: 100%;
-    background: url('assets/imgs/bg.png');
+    background-color: #65dde8;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -86,9 +86,9 @@ page-update-profile {
         width: 90%;
         border-radius: 30px !important;
         margin-left: 10px !important;
-        padding: 5px;
+        padding: 10px;
         font-size: 0.9em;
-        background-color: transparent;
+
         border: 1px solid #fff;
     }
 }

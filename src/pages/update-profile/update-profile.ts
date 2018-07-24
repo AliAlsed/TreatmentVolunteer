@@ -50,5 +50,7 @@ export class UpdateProfilePage {
       console.log(error);
     })
   }
-
+  pop(){
+    this.viewCtrl.dismiss();
+  }
 }

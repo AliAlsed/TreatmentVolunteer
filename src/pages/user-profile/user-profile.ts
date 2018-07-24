@@ -44,14 +44,18 @@ export class UserProfilePage{
   ionViewDidLoad() {
 
         this.UserProvider.getUser().then((res:any)=>{
+          if(res !=null){
           this.User.Name=res.name;
           this.User.age=res.age;
           this.User.city=res.city;
           this.User.disease=res.disease;
+          }
           //this.loader.dismiss();
         }).then(()=>{
           this.UserProvider.getUserImage().then((res:any)=>{
-            this.profileImage=res.image;
+            if(res != null){
+              this.profileImage=res.image;
+            }
           })
         }).then(()=>{
           this.loader.dismiss();
@@ -68,7 +72,7 @@ export class UserProfilePage{
     this.app.getRootNav().setRoot(HomePage)
   }
   doRefresh(refresher) {
-    
+
         this.UserProvider.getUser().then((res:any)=>{
           this.User.Name=res.name;
           this.User.age=res.age;
@@ -77,7 +81,9 @@ export class UserProfilePage{
           //this.loader.dismiss();
         }).then(()=>{
           this.UserProvider.getUserImage().then((res:any)=>{
-            this.profileImage=res.image;
+            if(res != null){
+            console.log(res)
+            }
           })
         }).then(()=>{
           this.loader.dismiss();
@@ -155,6 +161,9 @@ export class UserProfilePage{
       }
 
     });
+  }
+  about(){
+    this.app.getRootNav().push('AboutUsPage');
   }
 
 

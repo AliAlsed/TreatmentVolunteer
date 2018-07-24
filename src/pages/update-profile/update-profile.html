@@ -6,19 +6,25 @@
 -->
 <ion-header>
 
+
   <ion-navbar color="nav">
     <ion-title style="text-align:right"> تحديث الملف الشخصي</ion-title>
+    <ion-buttons left>
+    <button ion-button icon-only (click)="pop()">
+        <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content style="background-image: url('assets/imgs/bg.png')" text-center class="bg">
+<ion-content text-center class="bg">
   <form #f="ngForm">
     <ion-row class="login-form">
       <ion-col>
         <ion-list inset>
-          <ion-item style="margin-top: 15px;">
+          <ion-item style="margin-top: 165px;">
             <ion-label>
               <ion-icon name="person"></ion-icon>
             </ion-label>
@@ -56,8 +62,8 @@
           </ion-item>
 
         </ion-list>
-        <button ion-button [disabled]="f.invalid" color="light"type="submit" block (click)="update(f)" class="login-button" style="margin-top: 5px;">
-          <b>تحديث البروفايل</b>
+        <button ion-button [disabled]="f.invalid" color="light" type="submit" block (click)="update(f)" class="login-button" style="margin-top: 5px;">
+          <b style="color:black">تحديث البروفايل</b>
         </button>
 
       </ion-col>

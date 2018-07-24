@@ -39,7 +39,6 @@ $app-direction: ltr;
 
 $colors: (
   primary:    #22ABB6,
-
   secondary:  #3498db,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -48,7 +47,8 @@ $colors: (
   nav: #22ABB6,
   facebook:#3B5998,
   google:#DB4437,
-  pro:#001427
+  pro:#001427,
+  btn:#6EC8E7
 );
 $text-color:         black !default;
 $link-color:         color($colors, light) !default;

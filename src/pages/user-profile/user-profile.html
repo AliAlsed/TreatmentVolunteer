@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="nav">
-    <ion-title style="text-align:right">الملف الشخصي</ion-title>
+    <ion-title style="text-align:center">الملف الشخصي</ion-title>
     <ion-buttons start left>
       <button ion-button icon-only (click)="logout()">
         <ion-icon name="log-out"></ion-icon>
@@ -10,6 +10,11 @@
         <ion-icon name="build"></ion-icon>
       </button>
     </ion-buttons>
+    <ion-buttons end right>
+    <button ion-button icon-only (click)="about()" end right>
+        <ion-icon name="information-circle"></ion-icon>
+      </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content>
