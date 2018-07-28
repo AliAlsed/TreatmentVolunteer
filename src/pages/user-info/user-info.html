@@ -1,15 +1,12 @@
-<ion-content class="bac">
-  <ion-card style="margin-top: 185px;">
-
-    <ion-card-content style="color:black">
-      <h1 style="text-align: right;padding:5px">ادخل معلوماتك
-      </h1>
+<ion-content text-center style="margin-top:75px">
+  <img src="assets/imgs/6.png" alt="" srcset="">
       <form #f="ngForm">
-        <ion-item>
-          <ion-input type="text" placeholder="ادخل الاسم" style="color:black" name="name" ngModel required>
+        <ion-list no-lines>
+        <ion-item class="input">
+          <ion-input type="text" placeholder="ادخل الاسم"  name="name" ngModel required>
           </ion-input>
         </ion-item>
-        <ion-item>
+        <ion-item class="select">
           <ion-select placeholder=" الجنس" ngModel name="gender" style="color:black;text-align: right">
             <ion-option value="male">ذكر</ion-option>
             <ion-option value="female">انثى</ion-option>
@@ -46,10 +43,8 @@
           <ion-input placeholder="مرض مزمن " type="text" name="disease" ngModel style="color:black;font-size: 20px" required></ion-input>
         </ion-item>
         <ion-item>
-          <button ion-button large [disabled]="f.invalid" (click)="add(f)">التالي</button>
+          <button ion-button large [disabled]="f.invalid" (click)="add(f)" color="btn">التالي</button>
         </ion-item>
+      </ion-list>
       </form>
-
-    </ion-card-content>
-  </ion-card>
 </ion-content>

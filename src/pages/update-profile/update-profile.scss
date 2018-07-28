@@ -14,7 +14,7 @@ page-update-profile {
       .bg {
     height: 100%;
     width: 100%;
-    background-color: #65dde8;
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -26,11 +26,8 @@ page-update-profile {
     }
 
     ion-item {
-        border-radius: 30px !important;
+
         padding-left: 10px !important;
-        margin-top: 40px;
-        background-color: #fff;
-        opacity: 0.7;
         font-size: 0.9em;
         font-family: 'Times New Roman', Times, serif;
         font-style: italic;
@@ -38,10 +35,13 @@ page-update-profile {
     }
     ion-option{
       text-align: right;
+
     }
 
     ion-input{
       color: #000;
+      border: 1px solid #487EB0;
+
     }
 
     ion-list {
@@ -52,14 +52,12 @@ page-update-profile {
       flex: 0;
     }
 
-    .login-form {
-        flex: 1;
-        margin-top: 45px;
 
-    }
     ion-select{
       width:100%;
       max-width: 100% !important;
+      border: 1px solid #487EB0;
+
       padding-left:5px;
     }
     ion-option{
@@ -83,12 +81,9 @@ page-update-profile {
 
 
     .login-button {
-        width: 90%;
-        border-radius: 30px !important;
-        margin-left: 10px !important;
+        width: 85%;
+        margin-left: 25px !important;
         padding: 10px;
-        font-size: 0.9em;
-
-        border: 1px solid #fff;
+        font-size: 1.0em;
     }
 }

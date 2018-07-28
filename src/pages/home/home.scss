@@ -11,7 +11,6 @@ page-home {
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
-        background-color: #22ABB6;
       }
     .mybtn {
         position: absolute;
@@ -20,11 +19,5 @@ page-home {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
-    }
-    button {
-        position: absolute;
-        display: block;
-        top: 50%;
-        box-shadow: 0px;
     }
 }
