@@ -46,7 +46,8 @@ export class AllDiseasePage {
             photo: snap.val().photo,
             quantity: snap.val().quantity,
             treatment: snap.val().treatment,
-
+            lat:snap.val().lat,
+            long:snap.val().long
           })
         })
       })

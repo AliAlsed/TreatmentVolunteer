@@ -16,18 +16,7 @@ page-login {
       }
 
 
-      ion-input{
-        max-width: 333px;
-        max-height: 54px;
-        color: #000;
-        margin: 20px;
-        padding: 6px;
-        border: 1px solid #487EB0
-      }
 
-      .login-logo {
-        flex: 0;
-      }
 
       .create-account {
         color: #95989A;
@@ -35,11 +24,10 @@ page-login {
         background: none;
         font-size: 16px;
       }
-
-      .login-button {
-        margin:20px;
-        max-width: 333px;
-        max-height: 57px;
+      .input{
+        border: 1px solid #487EB0;
+        margin-top: 10px;
+        margin-bottom: 5px;
       }
 
 

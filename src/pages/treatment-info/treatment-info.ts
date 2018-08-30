@@ -6,6 +6,7 @@ import { UUID } from 'angular2-uuid';
 import * as firebase from 'firebase';
 import { CameraOptions, Camera } from '@ionic-native/camera';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { Geolocation } from '@ionic-native/geolocation';
 import { UsersProvider } from '../../providers/users/users';
 @Component({
   selector: 'page-treatment-info',
@@ -26,6 +27,7 @@ export class TreatmentInfoPage {
     private camera: Camera,
     public loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
+    private geolocation: Geolocation,
     public viewCtrl: ViewController) { }
   uuid = UUID.UUID();
   data: any;
@@ -111,8 +113,10 @@ export class TreatmentInfoPage {
       this.disease.name = res.name;
       this.disease.disease = res.disease;
     })
-
-
+    this.geolocation.getCurrentPosition().then((resp)=>{
+      this.disease.lat=resp.coords.latitude;
+      this.disease.long=resp.coords.longitude;
+    })
 
   }
   pop(){
@@ -125,9 +129,11 @@ export class TreatmentInfoPage {
     this.disease.phone = f.value.phone;
     this.disease.treatment = f.value.treatment;
     this.disease.quantity = f.value.quantity;
+
+    console.log(this.disease);
     if(this.imgSource != null && this.imgSource != undefined){
     this.disease.photo = this.imgSource;
-    console.log(this.disease);
+    
     this._AddDiseaseProvider.addDisease(this.disease).then((res) => {
       this.viewCtrl.dismiss();
     }, (error) => {

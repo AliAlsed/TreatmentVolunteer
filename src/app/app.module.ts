@@ -21,8 +21,12 @@ import { LoginPage } from '../pages/login/login';
 import { FormsModule } from '@angular/forms';
 import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { UpdateProfilePage } from '../pages/update-profile/update-profile';
-
-
+import { Geolocation } from '@ionic-native/geolocation';
+import {
+  GoogleMaps,
+  GoogleMap,
+} from '@ionic-native/google-maps';
+import { MapPage } from '../pages/map/map';
 @NgModule({
   declarations: [
     MyApp,
@@ -32,7 +36,8 @@ import { UpdateProfilePage } from '../pages/update-profile/update-profile';
     AlldiseaseDetailPage,
     LoginPage,
     ResetPasswordPage,
-    UpdateProfilePage
+    UpdateProfilePage,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -54,19 +59,22 @@ import { UpdateProfilePage } from '../pages/update-profile/update-profile';
     TreatmentDetailPage,
     AlldiseaseDetailPage,
     ResetPasswordPage,
-    UpdateProfilePage
+    UpdateProfilePage,
+    MapPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     FirebaseProvider,
+    Geolocation,
+    GoogleMaps ,
     AngularFireAuth,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsersProvider,
     Camera,
     Storage,
     AddDiseaseProvider,
-
+  
   ]
 })
 export class AppModule {}

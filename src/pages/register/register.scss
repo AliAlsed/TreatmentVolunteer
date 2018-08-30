@@ -13,17 +13,10 @@ page-register {
       .invalid {
         border-bottom: 1px solid #FF6153;
       }
-
-
-
-
-      ion-input{
-        max-width: 333px;
-        max-height: 54px;
-        color: #000;
-        margin: 20px;
-        padding: 6px;
-        border: 1px solid #487EB0
+      .input{
+        border: 1px solid #487EB0;
+        margin-top: 10px;
+        margin-bottom: 5px;
       }
 
       .login-logo {
@@ -47,8 +40,6 @@ page-register {
         font-size: 1.0em;
       }
       button{
-        width: 333px;
-        height: 54px;
         padding: 6px;
         font-size: 20px;
       }
