@@ -47,8 +47,8 @@ export class AlldiseaseDetailPage {
 
     console.log(this.item);
   }
-  showPos(lat,long){
-    this.navCtrl.push(MapPage,{'lat':lat,'long':long});
+  showPos(lat,long,name){
+    this.navCtrl.push(MapPage,{'lat':lat,'long':long,'name':name});
   }
 
 
